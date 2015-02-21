@@ -1,0 +1,15 @@
+
+<h1>Showing {{vm.users.length}} users</h1>
+
+<div class="filter-user toolbar">
+  <input type="text" placeholder="search" ng-model="vm.query">
+</div>
+
+<captioned-table cols="['User', 'External link']">
+  <li class="user-list-item captioned-table-row" ng-repeat="user in vm.users | filter:vm.query | orderBy: '-latestEvent.createdAt'">
+    <span class="captioned-table-cell"><user-profile user="user"></user-profile></span>
+    <span class="last-activity captioned-table-cell">
+      <a href="{{user.htmlUrl}}" target="_blank">GitHub</a>
+    </span>
+  </li>
+</captioned-table>

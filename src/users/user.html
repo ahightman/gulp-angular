@@ -1,0 +1,17 @@
+
+<h1>{{vm.user.name}} has {{vm.user.repoCount}} repos</h1>
+
+<div class="user-detail">
+  <div class="user-detail-profile">
+    <user-profile user="vm.user"></user-profile>
+  </div>
+
+  <span ng-if="vm.user.company" class="user-detail-company user-detail-item">Works @ {{vm.user.company}}</span>
+  <span class="user-detail-location user-detail-item">{{vm.user.location}}</span>
+  <a class="user-detail-username user-detail-item" ng-href="vm.user.htmlUrl" target="_blank">GitHub - {{vm.user.username}}</a>
+  <a ng-if="vm.user.blog" class="user-detail-blog user-detail-item" ng-href="vm.user.blog" target="_blank">Blog - {{vm.user.blog}}</a>
+  <span class="user-detail-email user-detail-item">{{vm.user.email}}</span>
+  <span class="user-detail-created user-detail-item">
+    User since: {{vm.user.created | date:'MM/dd/yyyy hh:mm a'}}
+  </span>
+</div>
