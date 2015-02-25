@@ -14,5 +14,13 @@ app.config(['$routeProvider', function($routeProvider) {
     $routeProvider.when('/users', routeDefinition);
   }])
   .controller('UsersCtrl', ['users', function (users) {
-    this.users = users;
+    var self = this;
+
+    self.users = users;
+
+    //// If you didn't want to use resolve to grab the users
+    //// from the API, you could do it this way in the controller:
+    // usersService.list().then(function (users) {
+    //   self.users = users;
+    // });
   }]);

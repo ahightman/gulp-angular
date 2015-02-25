@@ -1,4 +1,4 @@
-app.factory('usersService', ['$http', '$q', '$log', function($http, $q, $log) {
+app.factory('usersService', ['$http', '$log', function($http, $log) {
   function sanitizeUser(ghUser) {
     return {
       name: ghUser.name || ghUser.login,
