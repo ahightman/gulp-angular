@@ -1,5 +1,8 @@
-<h1>This app is just an Angular demo</h1>
+<h1 ng-class="{warning: vm.isWarning, 'not-warning': !vm.isWarning}" >This app is just an Angular demo</h1>
+
 <p>
   It's poorly styled, and not particularly useful...
   And debatably programmed.
 </p>
+
+<button ng-click="vm.toggleWarning()">Toggle Warning</button>

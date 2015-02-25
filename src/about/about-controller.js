@@ -7,4 +7,13 @@ app.config(['$routeProvider', function($routeProvider) {
 
     $routeProvider.when('/about', routeDefinition);
   }])
-  .controller('AboutCtrl', [function () { }]);
+  .controller('AboutCtrl', [function () {
+    var self = this;
+
+    self.isWarning = false;
+
+    self.toggleWarning = function () {
+      self.isWarning = !self.isWarning;
+    };
+
+  }]);
